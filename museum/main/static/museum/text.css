@@ -1,32 +1,9 @@
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
 
 body {
-  width:100%;
-}  
-body {
-  height: 100vh;
-  margin: 0;
-  background: linear-gradient(90deg, lightblue 50%,#FFF56E 50%);
-}
+        font-family: "Lato", sans-serif
+    }
 
-.icon_kids{
-  float:right;
-  color:white;
-  margin-right: 22%;
-  margin-top: 14%;
-}
+.mySlides {
+        display: none
+    }
 
-
-.adult{
-  float: left;
-  margin-left: 22%;
-  color: white;
-  margin-top: 15%;
-}
-.adult_image{
-  height: 200px;
-}
-.kids_image{
-  height: 220px;
-}
