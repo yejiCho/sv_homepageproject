@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local</title>
+     <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/local.css') }}">
+ 
+</head>
+<body>
+        <div class="jumbotron">
+                <h1 class="display-4">나홀로 링크 메모장</h1>
+                <p class="lead">글을 읽고 난 뒤 들었던 내 생각들. 단상. 나는 무엇을 읽고, 무엇을 생각했는가?</p>
+                <hr class="my-4">
+                <p class="lead">
+                  <button id ="btn-posting-box" onclick="openclose()" type="button" class="btn btn-primary">포스팅 박스 열기</button>
+                </p>
+        </div>
+
+        <div class="card">
+                <div class="card-body" id=cards-box>
+                  
+                </div>
+        </div>
+
+    
+    
+    </script> 
+
+<script>
+      
+      
+          window.onload=function(){
+           get_posting();
+        }
+      
+      
+      function get_posting() {
+        $.ajax({
+          type: "GET",
+          url: "/push",
+          data: {},
+          success: function(response){
+                   let cards = response['informations'];
+              for (let i = 0 ; i < cards.length; i++) {
+                let name = cards[i]['name'];
+                let date = cards[i]['date'];
+                let explain = cards[i]['explain'];
+                let locate = cards[i]['locate'];
+                let age = cards[i]['age'];
+                let theme = cards[i]['theme'];
+                let link = cards[i]['link'];
+                make_card(name, date, explain, locate, age, theme, link);
+              }
+      
+          }
+        })
+      
+      
+      }
+      
+      function make_card(name, date, explain, locate, age, theme, link) {
+          let temp_html = '<div class="card">\
+        <div class="card-body">\
+          <p>'+name+'</p>\
+          <p>'+date+'</p>\
+          <p>'+ explain +'</p>\
+          <p>'+ locate +'</p>\
+          <p>'+ age +'</p>\
+          <p>'+ theme +'</p>\
+          <a href="link">'+ link +'</a>\
+        </div>\
+      </div>\
+    </div>';
+
+          $('#cards-box').append(temp_html);
+        }
+
+
+
+      </script>
+</body>
+</html>

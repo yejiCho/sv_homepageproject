@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="local.html">Home</a></li>
+        <li><a href="local.html">Local</a></li>
+        <li><a href="local.html">target-age</a></li>
+        <li><a href="local.html">theme</a></li>
+
+    </ul>
+
+    <div class="main-image">
+        <p style="text-align: center; margin-top: 0; color:lavender;">
+            이것은 중심 이미지
+        </p>
+    </div>
+
+    <div class="member-login-box">
+        <h3>MEMBER LOGIN</h3>
+
+        <div class="loginid">
+            <label for="loginid">id</label>
+            <input type="text" id="login_id">
+        </div>
+
+        <div class="loginpassword">
+            <label for="loginpassword">password</label>
+            <input type="text" id="login_password">
+        </div>
+
+        <div>
+            <button onclick="button_click(); get_posting()" type="button">LOGIN</button>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function button_click() {
+
+            let id = $('#login_id').val();
+            let password = $('#login_password').val();
+            
+           
+
+            $.ajax({
+                type: "POST", // POST 방식으로 요청하겠다.
+                url: "/post", // /post라는 url에 요청하겠다.
+                data: { id_give: id, password_give: password }, // 데이터를 주는 방법
+                success:function(response){
+                    if(response['result']=='success'){
+                        alert('good');
+                    }
+                    else{
+                        alert('No');
+                    }
+                }
+            })
+        }
+
+       
+        function get_posting() {
+
+            let id = $('#login_id').val();
+            let password = $('#login_password').val();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/post",
+                    data: {},
+                    success: function (response) {
+                       if(response['id'] == id & response['password']==password)
+                       {
+                           location.href="login/admin";
+                       }
+                       else{
+                           alert('하..');
+                       }
+                    }
+                })
+            }
+
+            
+    </script>
+</body>
+
+</html>
