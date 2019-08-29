@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        .total {
+            margin: 0 20%;
+            border: 10px;
+            border-color: gray;
+        }
+
+        .name {
+            font-size: 4em;
+            text-align: center;
+            display: block;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .image {
+            width: 80%;
+            height: 50%;
+            margin: 0 10%;
+            margin-bottom: 50px;
+        }
+
+        .explain,
+        .locate {
+            text-align: center;
+            margin: 3%;
+        }
+
+        .date,
+        .age,
+        .theme {
+            text-align: right;
+        }
+
+        img {
+            width: 80%;
+            margin: 5% 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932a95a752ec9d8c183e169ed5812dd7"></script>
+
+    <div class="total">
+        <h1 class="name" id="name"></h1>
+
+        <div id="url"></div>
+
+        <div class="date">
+            <span>date : </span>
+            <span id="date"> </span>
+        </div>
+        <div class="age">
+            <span>age : </span>
+            <span id="age"></span>
+        </div>
+        <div class="theme">
+            <span>theme : </span>
+            <span id="theme"></span>
+        </div>
+
+
+        <div class="explain">
+            <span id="explain"></span>
+
+
+        </div>
+
+        <div class="locate">
+            <div>장소</div>
+            <div id="map" style="width:100%;height:350px;"></div>
+
+
+            <script>
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                    mapOption = {
+                        center: new kakao.maps.LatLng(37.537387, 127.011394), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                    };
+
+                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                var map = new kakao.maps.Map(mapContainer, mapOption);
+
+
+
+                var markerPosition = new kakao.maps.LatLng(37.537387, 127.011394);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+
+                // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                // marker.setMap(null);    
+
+
+                // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+                var iwContent = '<div style="padding:5px;">디뮤지엄</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    content: iwContent
+                });
+
+                // 마커에 마우스오버 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'mouseover', function () {
+                    // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+                    infowindow.open(map, marker);
+                });
+
+                // 마커에 마우스아웃 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'mouseout', function () {
+                    // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+                    infowindow.close();
+                });
+
+
+
+
+
+
+                window.onload = function () {
+                    get_posting();
+                }
+
+                function get_posting() {
+                    $.ajax({
+                        type: "GET",
+                        url: "/push",
+                        data: {},
+                        success: function (response) {
+                            let cards = response['informations'];
+                            let image = cards[1]['url'];
+                            let date = cards[1]['date'];
+                            let theme = cards[1]['theme'];
+                            let name = cards[1]['name'];
+                            let age = cards[1]['age'];
+                            let explain = cards[1]['explain'];
+
+                            // console.log(date,theme,name,age,explain);
+                            make_card(image, date, theme, name, age, explain);
+                        }
+                    })
+                }
+
+                function make_card(image, date, theme, name, age, explain) {
+                    let url1 = '<img src="' + image + '">';
+                    let date1 = '<span>' + date + '</span>';
+                    let theme1 = '<span>' + theme + '</span>';
+                    let name1 = '<span>' + name + '</span>';
+                    let age1 = '<span>' + age + '</span>';
+                    let explain1 = '<span>' + explain + '</span>';
+
+
+
+
+                    $('#url').append(url1);
+                    $('#date').append(date1);
+                    $('#theme').append(theme1);
+                    $('#name').append(name1);
+                    $('#age').append(age1);
+                    $('#explain').append(explain1);
+
+
+                }
+
+
+            </script>
+
+        </div>
+        <div class="link"><a href="https://mynameisanne.modoo.at/">링크 바로가기</a></div>
+    </div>
+</body>
+
+</html>

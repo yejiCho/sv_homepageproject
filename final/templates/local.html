@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local</title>
+     <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+      
+ul {
+            display: block;
+            width: 100%;
+            background-color: #111;
+            overflow: hidden;
+            margin: 0;
+            position: -webkit-sticky;
+            /* Safari */
+            position: sticky;
+            top: 0;
+        }
+
+        li {
+            display: inline;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: aliceblue;
+            padding: 8px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        li a:hover {
+            background-color: red;
+        }
+
+        .main-image {
+            display: block;
+            width: 100%;
+            height: 200px;
+            margin: 0 auto;
+            background-color: #111;
+        }
+
+        div.jumbotron {
+        width: 900px;
+        margin: auto;
+        }
+
+        div.card-columns{
+        width: 900px;
+        margin: 10px auto 0 auto;
+        }
+
+        div.form-post {
+        max-width: 500px;
+        padding: 2rem;
+        margin: 2rem auto;
+        border-color: #e9ecef;
+        border-radius: 0.3rem;
+        border: solid;
+        }
+
+        .comment {
+        color: blue;
+        font-weight: bold;
+        }
+
+        #posting-box {
+        display: none;
+        }
+        .card{
+          display: inline-block;
+          margin:0 15px;
+        }
+        .cards{
+          margin:5% 10%;
+        }
+  </style>
+</head>
+<body>
+        <ul>
+          <li><a href="local.html">Home</a></li>
+          <li><a href="local.html">Local</a></li>
+          <li><a href="local.html">target-age</a></li>
+          <li><a href="local.html">theme</a></li>
+        
+        </ul>
+        
+        <div class="main-image">
+          <p style="text-align: center; padding-top: 50px; margin-top:0; color:lavender;
+                font-size: 4em;">
+            CHO-A
+          </p>
+        </div>
+        <div class="cards">
+          <div class="card" id="cards-box">
+         
+          </div>
+        </div>
+    
+    
+    </script> 
+
+<script>
+      
+      
+          window.onload=function(){
+           get_posting();
+        }
+      
+      
+      function get_posting() {
+        $.ajax({
+          type: "GET",
+          url: "/push",
+          data: {},
+          success: function(response){
+                   let cards = response['informations'];
+              for (let i = 0 ; i < cards.length; i++) {
+                let name = cards[i]['name'];
+                let date = cards[i]['date'];
+                let explain = cards[i]['explain'];
+                let locate = cards[i]['locate'];
+                let age = cards[i]['age'];
+                let theme = cards[i]['theme'];
+                let link = cards[i]['link'];
+                let num = cards[i]['num'];
+                let img = cards[i]['img'];
+                make_card(img, num,name, date, explain, locate, age, theme, link);
+              }
+      
+          }
+        })
+      
+      
+      }
+      
+      function make_card(img, num, name, date, explain, locate, age, theme, link) {
+          let temp_html = '<span class="card">\
+        <span class="card-body">\
+        <span class="image">\
+        <a href="local-click.html">\
+         <img src="'+img+'">\
+         </a>\
+          </span>\
+          <span class="tag">\
+          <p>'+name+'</p>\
+          <p>'+date+'</p>\
+          <p>'+ theme +'</p>\
+          </span>\
+        </span>\
+      </span>';
+
+          $('#cards-box').append(temp_html);
+        }
+
+
+
+      </script>
+</body>
+</html>
