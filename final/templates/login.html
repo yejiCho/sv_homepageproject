@@ -75,12 +75,13 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .loginid,.loginpassword{
+
+        .loginid,
+        .loginpassword {
             margin-left: 15%;
             font-size: 20px;
             margin-top: 3%;
         }
-
     </style>
 </head>
 
@@ -116,7 +117,7 @@
             <input type="text" id="login_password">
         </div>
 
-       
+
     </div>
 
 
@@ -127,47 +128,46 @@
 
             let id = $('#login_id').val();
             let password = $('#login_password').val();
-            
-           
+
+
 
             $.ajax({
                 type: "POST", // POST 방식으로 요청하겠다.
                 url: "/post", // /post라는 url에 요청하겠다.
                 data: { id_give: id, password_give: password }, // 데이터를 주는 방법
-                success:function(response){
-                    if(response['result']=='success'){
-                        alert('good');
+                success: function (response) {
+                    if (response['result'] == 'success') {
+                        alert('로그인 성공!');
                     }
-                    else{
+                    else {
                         alert('No');
                     }
                 }
             })
         }
 
-       
+
         function get_posting() {
 
             let id = $('#login_id').val();
             let password = $('#login_password').val();
 
-                $.ajax({
-                    type: "GET",
-                    url: "/post",
-                    data: {},
-                    success: function (response) {
-                       if(response['id'] == id & response['password']==password)
-                       {
-                           location.href="login/admin";
-                       }
-                       else{
-                           alert('하..');
-                       }
+            $.ajax({
+                type: "GET",
+                url: "/post",
+                data: {},
+                success: function (response) {
+                    if (response['id'] == id & response['password'] == password) {
+                        location.href = "login/admin";
                     }
-                })
-            }
+                    else {
+                        alert('하..');
+                    }
+                }
+            })
+        }
 
-            
+
     </script>
 </body>
 

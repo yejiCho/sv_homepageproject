@@ -4,70 +4,68 @@
 
 <head>
 
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
 
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>쇼핑몰</title>
-
-
-
-    <style>
+  <title>쇼핑몰</title>
 
 
 
-   body{
+  <style>
+    body {
 
-        padding: 10px;
+      padding: 10px;
 
-        padding-top:100px;
+      padding-top: 100px;
 
 
 
-        height: 1000px;
+      height: 1000px;
 
-        width: 800px;
+      width: 800px;
 
-        margin: 0 auto;
+      margin: 0 auto;
 
-        /* outline-style:solid;
+      /* outline-style:solid;
 
         outline-color:blue; */
 
-        border: 5px solid blue;
+      border: 5px solid blue;
 
-   }
+    }
 
-   div.card-columns{
-    width: 900px;
-    margin: 10px auto 0 auto;
-  }
+    div.card-columns {
+      width: 900px;
+      margin: 10px auto 0 auto;
+    }
 
-  div.form-post {
-   max-width: 500px;
-   padding: 2rem;
-   margin: 2rem auto;
-   border-color: #e9ecef;
-   border-radius: 0.3rem;
-   border: solid;
- }
+    div.form-post {
+      max-width: 500px;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-color: #e9ecef;
+      border-radius: 0.3rem;
+      border: solid;
+    }
 
- .comment {
-   color: blue;
-   font-weight: bold;
- }
+    .comment {
+      color: blue;
+      font-weight: bold;
+    }
 
 
 
-    .Product{
+    .Product {
 
-        width: 800px;
+      width: 800px;
 
-        margin: 0 auto;
+      margin: 0 auto;
 
 
 
@@ -75,39 +73,15 @@
 
 
 
-    .buy{
+    .buy {
 
-        width: 800px;
+      width: 800px;
 
-        margin: 0 auto;
-
-
-
-        /* text-align:center; */
+      margin: 0 auto;
 
 
 
-    }
-
-
-
-    div.im{
-
-        width: 400px;
-
-        text-align:center;
-
-        margin: 0 auto;
-
-
-
-    }
-
-    .content{
-
-
-
-        text-align:center;
+      /* text-align:center; */
 
 
 
@@ -115,9 +89,33 @@
 
 
 
-    .name{
+    div.im {
 
-        font-size:30px;
+      width: 400px;
+
+      text-align: center;
+
+      margin: 0 auto;
+
+
+
+    }
+
+    .content {
+
+
+
+      text-align: center;
+
+
+
+    }
+
+
+
+    .name {
+
+      font-size: 30px;
 
     }
 
@@ -125,51 +123,39 @@
 
 
 
-    .button{
+    .button {
 
 
 
-        height: 50px;
+      height: 50px;
 
-        width: 300px;
-
-
-
-        background-color: white;
-
-        color: black;
-
-        border: 2px solid blue;
-
-    }
+      width: 300px;
 
 
 
-    .button1{
+      background-color: white;
 
-        text-align:center;
+      color: black;
+
+      border: 2px solid blue;
 
     }
 
 
 
-    .button:hover{
+    .button1 {
 
-        background-color: blue;
-
-        color:white;
+      text-align: center;
 
     }
 
 
 
+    .button:hover {
 
+      background-color: blue;
 
-    button.button{
-
-        text-align:center;
-
-        margin: 0 auto;
+      color: white;
 
     }
 
@@ -177,21 +163,34 @@
 
 
 
+    button.button {
 
+      text-align: center;
 
-    a:link{
-
-        text-decoration: none;
+      margin: 0 auto;
 
     }
 
-    table, td, th{
+
+
+
+
+
+
+    a:link {
+
+      text-decoration: none;
+
+    }
+
+    table,
+    td,
+    th {
       border: 1px solid black;
-       margin: 0 auto;
+      margin: 0 auto;
 
-      }
-
-    </style>
+    }
+  </style>
 
 
 
@@ -199,152 +198,152 @@
 
 </head>
 
-<body >
-      
-    <div class="buy">
+<body>
 
-            <div id="posting-box2" class="form-post">
-                    <form>
-                      <div class="form-group">
-                        <label for="exampleFormControlInput1">x</label>
-                        <input id="x" class="form-control" placeholder="">
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">y</label>
-                          <input id="y" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlInput1">image-url</label>
-                        <input id="img" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlInput1">제목</label>
-                        <input id="name" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">기간</label>
-                        <input id="date" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                            <label for="exampleFormControlTextarea1">설명</label>
-                            <input id="explain" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                                <label for="exampleFormControlTextarea1">지도</label>
-                                <input id="locate" class="form-control" placeholder="">
-                              </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">연령대</label>
-                        <input id="age" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">테마</label>
-                        <input id="theme" class="form-control" placeholder="">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleFormControlTextarea1">링크</label>
-                        <input id="link" class="form-control" placeholder="">
-                      </div>
-                      <button onclick="posting()" type="button" class="btn btn-primary">내용저장</button>
-                  
-                    </form>
-                  
-            </div>
-    
+  <div class="buy">
+
+    <div id="posting-box2" class="form-post">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">x</label>
+          <input id="x" class="form-control" placeholder="">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">y</label>
+            <input id="y" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">image-url</label>
+            <input id="img" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">제목</label>
+            <input id="name" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">기간</label>
+            <input id="date" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">설명</label>
+            <input id="explain" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">지역</label>
+            <input id="locate" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">연령대</label>
+            <input id="age" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">테마</label>
+            <input id="theme" class="form-control" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">링크</label>
+            <input id="link" class="form-control" placeholder="">
+          </div>
+          <button onclick="posting()" type="button" class="btn btn-primary">내용저장</button>
+
+      </form>
 
     </div>
-    
-        <table class="table" id="card">
-         <thead>
-          <tr>
-            <th>숫자</th>
-            <th>제목</th>
-            <th>기간</th>
-            <th>이름</th>
-            <th>지역</th>
-          </tr>
-        </thead>
-
-        </table>
 
 
+  </div>
 
-        <br>
+  <table class="table" id="card">
+    <thead>
+      <tr>
+        <th>숫자</th>
+        <th>제목</th>
+        <th>기간</th>
+        <th>이름</th>
+        <th>지역</th>
+      </tr>
+    </thead>
+
+  </table>
 
 
 
-    
+  <br>
 
-<script>
-  function posting() {
-    let x = $('#x').val();
-    let y = $('#y').val();
-    let img = $('#img').val();
-    let name = $('#name').val();
-    let date = $('#date').val();
-    let explain = $('#explain').val();
-    let locate = $('#locate').val();
-    let age = $('#age').val();
-    let theme = $('#theme').val();
-    let link = $('#link').val();
-    $.ajax({
-      type: "POST", // POST 방식으로 요청하겠다.
-      url: "/push", // /post라는 url에 요청하겠다.
-      data: { x_give : x, y_give : y, img_give : img, name_give: name, date_give: date, explain_give: explain, locate_give: locate, age_give:age, theme_give:theme, link_give:link}, // 데이터를 주는 방법
-           success: function(response){ // 성공하면
-        if (response['result'] == 'success') {
 
-					window.location.reload();
-        } else {
-          alert('서버 오류!')
+
+
+
+  <script>
+    function posting() {
+      let x = $('#x').val();
+      let y = $('#y').val();
+      let img = $('#img').val();
+      let name = $('#name').val();
+      let date = $('#date').val();
+      let explain = $('#explain').val();
+      let locate = $('#locate').val();
+      let age = $('#age').val();
+      let theme = $('#theme').val();
+      let link = $('#link').val();
+      $.ajax({
+        type: "POST", // POST 방식으로 요청하겠다.
+        url: "/push", // /post라는 url에 요청하겠다.
+        data: { x_give: x, y_give: y, img_give: img, name_give: name, date_give: date, explain_give: explain, locate_give: locate, age_give: age, theme_give: theme, link_give: link }, // 데이터를 주는 방법
+        success: function (response) { // 성공하면
+          if (response['result'] == 'success') {
+
+            window.location.reload();
+          } else {
+            alert('서버 오류!')
+          }
         }
-      }
 
-    })
-
-  }
-
-
-    window.onload=function(){
-     get_posting();
-  }
-
-
-function get_posting() {
-  $.ajax({
-    type: "GET",
-    url: "/push",
-    data: {},
-    success: function(response){
-             let cards = response['informations'];
-        for (let i = 0 ; i < cards.length; i++) {
-          let name = cards[i]['name'];
-          let date = cards[i]['date'];
-          let explain = cards[i]['explain'];
-          let locate = cards[i]['locate'];
-          let age = cards[i]['age'];
-          let theme = cards[i]['theme'];
-          let link = cards[i]['link'];
-          let num = cards[i]['num'];
-          let img = cards[i]['img'];
-          let x = cards[i]['x'];
-          let y = cards[i]['y'];
-          make_card(img, num, name, date, explain, locate, age, theme, link);
-        }
+      })
 
     }
-  })
 
 
-}
+    window.onload = function () {
+      get_posting();
+    }
 
-  function make_card(img, num, name, date, explain, locate, age, theme, link){
-    let temp_html = '\
+
+    function get_posting() {
+      $.ajax({
+        type: "GET",
+        url: "/push",
+        data: {},
+        success: function (response) {
+          let cards = response['informations'];
+          for (let i = 0; i < cards.length; i++) {
+            let name = cards[i]['name'];
+            let date = cards[i]['date'];
+            let explain = cards[i]['explain'];
+            let locate = cards[i]['locate'];
+            let age = cards[i]['age'];
+            let theme = cards[i]['theme'];
+            let link = cards[i]['link'];
+            let num = cards[i]['num'];
+            let img = cards[i]['img'];
+            let x = cards[i]['x'];
+            let y = cards[i]['y'];
+            make_card(img, num, name, date, explain, locate, age, theme, link);
+          }
+
+        }
+      })
+
+
+    }
+
+    function make_card(img, num, name, date, explain, locate, age, theme, link) {
+      let temp_html = '\
           <tr>\
-            <td>'+ num +'</td>\
-            <td>'+name+'</td>\
-            <td>'+date+'</td>\
-            <td>'+explain+'</td>\
-            <td>'+locate+'</td>\
+            <td>'+ num + '</td>\
+            <td>'+ name + '</td>\
+            <td>'+ date + '</td>\
+            <td>'+ explain + '</td>\
+            <td>'+ locate + '</td>\
             <td><button onclick="deleting()" id="delete" type="button" class="btn btn-primary">삭제</button></td>\
           </tr>\
         </div>\
@@ -353,11 +352,11 @@ function get_posting() {
 
 
 
-    $('#card').append(temp_html);
-  }
+      $('#card').append(temp_html);
+    }
 
- 
-</script>
+
+  </script>
 
 
 

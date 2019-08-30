@@ -1,167 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Local</title>
-     <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Local</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+
+
   <style>
-      
-ul {
-            display: block;
-            width: 100%;
-            background-color: #111;
-            overflow: hidden;
-            margin: 0;
-            position: -webkit-sticky;
-            /* Safari */
-            position: sticky;
-            top: 0;
-        }
+    ul {
+      display: block;
+      width: 100%;
+      background-color: #111;
+      overflow: hidden;
+      margin: 0;
+      position: -webkit-sticky;
+      /* Safari */
+      position: sticky;
+      top: 0;
+    }
 
-        li {
-            display: inline;
-            float: left;
-        }
+    li {
+      display: inline;
+      float: left;
+    }
 
-        li a {
-            display: block;
-            color: aliceblue;
-            padding: 8px;
-            text-decoration: none;
-            text-align: center;
-        }
+    li a {
+      display: block;
+      color: aliceblue;
+      padding: 8px;
+      text-decoration: none;
+      text-align: center;
+    }
 
-        li a:hover {
-            background-color: red;
-        }
+    li a:hover {
+      background-color: red;
+    }
 
-        .main-image {
-            display: block;
-            width: 100%;
-            height: 200px;
-            margin: 0 auto;
-            background-color: #111;
-        }
+    .main-image {
+      display: block;
+      width: 100%;
+      height: 200px;
+      margin: 0 auto;
+      background-color: #111;
+    }
 
-        div.jumbotron {
-        width: 900px;
-        margin: auto;
-        }
+    div.jumbotron {
+      width: 900px;
+      margin: auto;
+    }
 
-        div.card-columns{
-        width: 900px;
-        margin: 10px auto 0 auto;
-        }
+    div.card-columns {
+      width: 900px;
+      margin: 10px auto 0 auto;
 
-        div.form-post {
-        max-width: 500px;
-        padding: 2rem;
-        margin: 2rem auto;
-        border-color: #e9ecef;
-        border-radius: 0.3rem;
-        border: solid;
-        }
+    }
 
-        .comment {
-        color: blue;
-        font-weight: bold;
-        }
+    div.form-post {
+      max-width: 500px;
+      padding: 2rem;
+      margin: 2rem auto;
+      border-color: #e9ecef;
+      border-radius: 0.3rem;
+      border: solid;
+    }
 
-        #posting-box {
-        display: none;
-        }
-        .card{
-          display: inline-block;
-          margin:0 15px;
-        }
-        .cards{
-          margin:5% 10%;
-        }
+    .comment {
+      color: blue;
+      font-weight: bold;
+    }
+
+    #posting-box {
+      display: none;
+    }
+
+    .card {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    .cards {
+      margin: 5% 10%;
+    }
+
+    a {
+      color: #000;
+    }
+
+    .name {
+      font-size: 2em;
+      text-align: center;
+      display: block;
+      margin-top: 50px;
+      margin-bottom: 50px;
+    }
+
+    .image {
+      width: 80%;
+      height: 50%;
+      margin: 0 10%;
+      margin-bottom: 50px;
+    }
+
+    .explain,
+    .locate {
+      text-align: center;
+      margin: 3%;
+    }
+
+    .date,
+    .age,
+    .theme {
+      text-align: right;
+    }
+
+    img {
+      width: 80%;
+      margin: 5% 10%;
+    }
+
+
+    #ex0.modal {
+      width: 80%;
+    }
   </style>
 </head>
-<body>
-        <ul>
-          <li><a href="local.html">Home</a></li>
-          <li><a href="local.html">Local</a></li>
-          <li><a href="local.html">target-age</a></li>
-          <li><a href="local.html">theme</a></li>
-        
-        </ul>
-        
-        <div class="main-image">
-          <p style="text-align: center; padding-top: 50px; margin-top:0; color:lavender;
-                font-size: 4em;">
-            CHO-A
-          </p>
-        </div>
-        <div class="cards">
-          <div class="card" id="cards-box">
-         
-          </div>
-        </div>
-    
-    
-    </script> 
 
-<script>
-      
-      
-          window.onload=function(){
-           get_posting();
-        }
-      
-      
-      function get_posting() {
-        $.ajax({
-          type: "GET",
-          url: "/push",
-          data: {},
-          success: function(response){
-                   let cards = response['informations'];
-              for (let i = 0 ; i < cards.length; i++) {
-                let name = cards[i]['name'];
-                let date = cards[i]['date'];
-                let explain = cards[i]['explain'];
-                let locate = cards[i]['locate'];
-                let age = cards[i]['age'];
-                let theme = cards[i]['theme'];
-                let link = cards[i]['link'];
-                let num = cards[i]['num'];
-                let img = cards[i]['img'];
-                make_card(img, num,name, date, explain, locate, age, theme, link);
+<body>
+  <!-- 지도 -->
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=932a95a752ec9d8c183e169ed5812dd7"></script>
+
+
+  <ul>
+    <li><a href="local.html">Home</a></li>
+    <li><a href="local.html">Local</a></li>
+    <li><a href="local.html">target-age</a></li>
+    <li><a href="local.html">theme</a></li>
+
+  </ul>
+
+  <div class="main-image">
+    <p style="text-align: center; padding-top: 50px; margin-top:0; color:lavender;
+                font-size: 4em;">
+      CHO-A
+    </p>
+  </div>
+
+
+
+  <div class="cards">
+    <div class="card" id="cards-box">
+
+    </div>
+  </div>
+  <!-- modal0 -->
+  <div class="total">
+    <div id="ex0" class="modal" style="width: 100%">
+      <h1 class="name" id="name0"></h1>
+
+      <div id="img0"></div>
+
+      <div class="date">
+        <span>date : </span>
+        <span id="date0"> </span>
+      </div>
+      <div class="age">
+        <span>age : </span>
+        <span id="age0"></span>
+      </div>
+      <div class="theme">
+        <span>theme : </span>
+        <span id="theme0"></span>
+      </div>
+
+
+      <div class="explain">
+        <span id="explain0"></span>
+      </div>
+
+
+      <a href="#" rel="modal:close">close</a>
+    </div>
+
+    <!--        modal1 -->
+    <div class="total">
+
+      <div id="ex1" class="modal">
+        <h1 class="name" id="name1"></h1>
+
+        <div id="img1"></div>
+
+        <div class="date">
+          <span>date : </span>
+          <span id="date1"> </span>
+        </div>
+        <div class="age">
+          <span>age : </span>
+          <span id="age1"></span>
+        </div>
+        <div class="theme">
+          <span>theme : </span>
+          <span id="theme1"></span>
+        </div>
+
+
+        <div class="explain">
+          <span id="explain1"></span>
+
+
+        </div>
+        <a href="#" rel="modal:close">close</a>
+      </div>
+
+      <!-- modal2 -->
+      <div class="total">
+
+        <div id="ex2" class="modal">
+          <h1 class="name" id="name2"></h1>
+
+          <div id="img2"></div>
+
+          <div class="date">
+            <span>date : </span>
+            <span id="date2"> </span>
+          </div>
+          <div class="age">
+            <span>age : </span>
+            <span id="age2"></span>
+          </div>
+          <div class="theme">
+            <span>theme : </span>
+            <span id="theme2"></span>
+          </div>
+
+
+          <div class="explain">
+            <span id="explain2"></span>
+
+
+          </div>
+          <div class="locate">
+            <a href="#" rel="modal:close">close</a>
+          </div>
+
+          <!-- modal3 -->
+          <div class="total">
+
+            <div id="ex3" class="modal">
+              <h1 class="name" id="name3"></h1>
+
+              <div id="img3"></div>
+
+              <div class="date">
+                <span>date : </span>
+                <span id="date3"> </span>
+              </div>
+              <div class="age">
+                <span>age : </span>
+                <span id="age3"></span>
+              </div>
+              <div class="theme">
+                <span>theme : </span>
+                <span id="theme3"></span>
+              </div>
+
+
+              <div class="explain">
+                <span id="explain3"></span>
+
+                <a href="C:\Users\미동이\Documents\카카오톡 받은 파일\m\final\templates\locate.html"> <button>지도보기</button></a>
+              </div>
+              <a href="#" rel="modal:close">close</a>
+            </div>
+
+
+
+            <script>
+
+
+              window.onload = function () {
+                get_posting();
               }
-      
-          }
-        })
-      
-      
-      }
-      
-      function make_card(img, num, name, date, explain, locate, age, theme, link) {
-          let temp_html = '<span class="card">\
-        <span class="card-body">\
+
+
+              function get_posting() {
+                $.ajax({
+                  type: "GET",
+                  url: "/push",
+                  data: {},
+                  success: function (response) {
+                    let cards = response['informations'];
+                    for (let i = 0; i < cards.length; i++) {
+                      let name = cards[i]['name'];
+                      let date = cards[i]['date'];
+                      let locate = cards[i]['locate'];
+                      let age = cards[i]['age'];
+                      let theme = cards[i]['theme'];
+                      let link = cards[i]['link'];
+                      let img = cards[i]['img'];
+                      let explain = cards[i]['explain'];
+                      let x = cards[i]['x'];
+                      let y = cards[i]['y'];
+                      make_cards(i, img, name, date, locate, age, theme, link);
+                      click(i, img, date, theme, name, age, explain, x, y);
+                      // make_map(x, y);
+
+                    }
+                  }
+                }
+                )
+
+              }
+
+              // local homepage에 card 만들기
+              function make_cards(i, img, name, date, locate, age, theme, link) {
+                let temp_html = '<span class="card">\
+        <span class="card-body '+ locate + '">\
         <span class="image">\
-        <a href="local-click.html">\
-         <img src="'+img+'">\
+        <a href="#ex'+ i + '" rel="modal:open">\
+         <img src="'+ img + '">\
          </a>\
           </span>\
           <span class="tag">\
-          <p>'+name+'</p>\
-          <p>'+date+'</p>\
-          <p>'+ theme +'</p>\
+          <p>'+ name + '</p>\
+          <p>'+ date + '</p>\
+          <p>'+ theme + '</p>\
           </span>\
         </span>\
       </span>';
 
-          $('#cards-box').append(temp_html);
-        }
+                $('#cards-box').append(temp_html);
+
+              }
+
+              // click하면 나오는 modal 
+              function click(i, img, date, theme, name, age, explain, x, y) {
+                let img1 = '<img src="' + img + '">';
+                let date1 = '<span>' + date + '</span>';
+                let theme1 = '<span>' + theme + '</span>';
+                let name1 = '<span>' + name + '</span>';
+                let age1 = '<span>' + age + '</span>';
+                let explain1 = '<span>' + explain + '</span>';
+
+
+                // make_map(x,y);
+
+
+                $('#img' + i + '').append(img1);
+                $('#date' + i + '').append(date1);
+                $('#theme' + i + '').append(theme1);
+                $('#name' + i + '').append(name1);
+                $('#age' + i + '').append(age1);
+                $('#explain' + i + '').append(explain1);
+                // i번째 id인 곳에 정보를 넣음
+                // $('#map' + i + '').append(map1);
+                // make_map(x,y);
+
+              }
+
+              function make_map(x, y) {
+                var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                  mapOption = {
+
+                    center: new kakao.maps.LatLng(x, y), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                  };
+
+                // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                var map = new kakao.maps.Map(mapContainer, mapOption);
 
 
 
-      </script>
+                var markerPosition = new kakao.maps.LatLng(x, y);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                  position: markerPosition
+                });
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+
+                // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+                // marker.setMap(null);    
+
+
+                // 마커에 커서가 오버됐을 때 마커 위에 표시할 인포윈도우를 생성합니다
+                var iwContent = '<div style="padding:5px;">빨간머리앤</div>'; // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                  content: iwContent
+                });
+
+                // 마커에 마우스오버 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'mouseover', function () {
+                  // 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+                  infowindow.open(map, marker);
+                });
+
+                // 마커에 마우스아웃 이벤트를 등록합니다
+                kakao.maps.event.addListener(marker, 'mouseout', function () {
+                  // 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+                  infowindow.close();
+                });
+              }
+
+
+      // function make_cards(img, name, date, locate, age, theme, link){
+      // function make_G(img, name, date,  locate, age, theme, link) {
+      //   if (locate == '경기'){
+      //     let temp_html = '<span class="card">\
+      //   <span class="card-body">\
+      //   <span class="image">\
+      //   <a href="local-click.html">\
+      //    <img src="'+img+'">\
+      //    </a>\
+      //     </span>\
+      //     <span class="tag">\
+      //     <p>'+name+'</p>\
+      //     <p>'+date+'</p>\
+      //     <p>'+ theme +'</p>\
+      //     </span>\
+      //   </span>\
+      // </span>';
+
+      //     $('#cards-box').append(temp_html);
+      //   }
+      //   }
+
+      //   function make_S(img, name, date, locate, age, theme, link) {
+      //      if (locate == '서울') {
+      //       let temp_html = '<span class="card">\
+      //   <span class="card-body">\
+      //   <span class="image">\
+      //   <a href="local-click.html">\
+      //    <img src="'+ img + '">\
+      //    </a>\
+      //     </span>\
+      //     <span class="tag">\
+      //     <p>'+ name + '</p>\
+      //     <p>'+ date + '</p>\
+      //     <p>'+ theme + '</p>\
+      //     </span>\
+      //   </span>\
+      // </span>';
+
+      //       $('#cards-box').append(temp_html);
+      //      }
+      //     }
+
+      //     function make_E(img, name, date,  locate, age, theme, link) {
+      //        if (locate == '기타') {
+      //         let temp_html = '<span class="card">\
+      //   <span class="card-body">\
+      //   <span class="image">\
+      //   <a href="local-click.html">\
+      //    <img src="'+ img + '">\
+      //    </a>\
+      //     </span>\
+      //     <span class="tag">\
+      //     <p>'+ name + '</p>\
+      //     <p>'+ date + '</p>\
+      //     <p>'+ theme + '</p>\
+      //     </span>\
+      //   </span>\
+      // </span>';
+
+      //         $('#cards-box').append(temp_html);
+      //       }
+      // }
+      // }
+
+            </script>
+
 </body>
+
 </html>
